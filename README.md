@@ -13,11 +13,15 @@ agregan hasta 8 direcciones de luz a un objeto obj y se hace la respectiva compa
 
 ## Descripcion 
 Se utiliza un libreria llamada "peasycam" en processing para el manejo de la camara en el sketch, se hace una funcion
-para calulcar los puntos de luces (1 a 8) con respecto a un radio de luz y el angulo. 
+para calulcar los puntos de luces (1 a 8) con respecto a un radio de luz y el angulo. Luego en el draw cargamos los shader en glsl para las iluminaciones. Para la luz especular hacemos el calculo correspondiente utilizando la funcion reflect que calcula la dirección de reflexión entre un vector de incidente(normalizado y negativo) y el vector normal; luego calculamos la instensidad para el efecto especular haciendo una potencia de 3 para el maximo entre 0 y el producto entre el calculo de la funcion reflect para cada direccion de la luz y la direccion de la camara ambas normalizadas. Para la iluminacion difusa es el mismo procedimiento sin utilizar el la funcion reflect y calculando intensidad difusa calculando el maximo entre 0 y el producto entre el vector normal y la direccion de la camara, estando normalizados. 
 
 
 ## Resultados
+A continuacion se muestra los resultados obtenidos tanto para la iluminacion difusa y especular.
 
+En esta imagen podemos obsevar reflexion difusa realizada a un obj importado en nuestro sketch: ![alt](https://github.com/jdmonroyg/LuzDifusaEspecular/blob/master/Difusa.png)
+
+En esta otra imagen observamos la reflexion especular: ![alt](https://github.com/jdmonroyg/LuzDifusaEspecular/blob/master/Especular.png)
 
 
 
